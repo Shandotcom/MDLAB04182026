@@ -1,0 +1,178 @@
+:root {
+    --font: Helvetica;
+    --black: black;
+    --white: white;
+    --contrast: magenta;
+    --text-padding: 10px 20px;
+    --text-border-radius: 999px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font);
+    color: var(--black);
+}
+
+html {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+/* Navigation */
+
+header {
+    display: flex;
+    justify-content: center;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    margin: 20px;
+    border-radius: var(--text-border-radius);
+    position: fixed;
+    width: 80%;
+    background-color: rgba(48, 48, 48, 0.147);
+    backdrop-filter: blur(5px);
+}
+
+.nav-brand {
+    align-self: center;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+.link-items a {
+    text-decoration: none;
+    padding: var(--text-padding);
+    border-radius: var(--text-border-radius);
+}
+
+.link-items a:hover {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+
+/* Hero */
+.hero {
+    display: flex;
+    justify-content: center;
+    padding: 30vh;
+}
+
+.hero-content {
+    display: block;
+    justify-content: left;
+    text-align: start;
+}
+
+.hero-content h1 {
+    display: block;
+    margin: 10px;
+    font-size: 70px;
+}
+
+.hero-content p {
+    display: block;
+    margin: 10px;
+    font-size: 1rem;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--black);
+}
+
+.footer-top {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+/* Footer Button */
+button {
+    all: unset;
+}
+
+.footer-brand {
+    background-color: var(--white);
+    color: var(--black);
+    margin: 20px;
+    padding: var(--text-padding);
+    border-radius: var(--text-border-radius);
+    cursor: pointer;
+}
+
+.text-hover,
+.text-clicked {
+    display: none;
+}
+
+.footer-brand:hover:not(.copied) .text-original {
+    display: none;
+}
+
+.footer-brand:hover:not(.copied) .text-hover {
+    display: block;
+    cursor: pointer;
+}
+
+.footer-brand.copied .text-original,
+.footer-brand.copied .text-hover {
+    display: none;
+}
+
+.footer-brand.copied .text-clicked {
+    display: block;
+    color: var(--contrast);
+}
+
+/* Footer Links */
+.footer-top a {
+    text-decoration: none;
+    color: var(--white);
+    margin: 20px;
+    padding: var(--text-padding);
+    border-radius: var(--text-border-radius);
+}
+
+.footer-top a:hover {
+    background-color: var(--white);
+    color: var(--black);
+}
+
+/* Footer Spinner */
+.footer-spinner {
+    overflow: hidden;
+}
+
+.spinner-item {
+    display: flex;
+    white-space: nowrap;
+    animation: spin 11s linear infinite;
+}
+
+.spinner-item span {
+    font-size: 120px;
+    margin: 5rem 0 10rem 0;
+    color: var(--white);
+}
+
+/* Animation */
+@keyframes spin {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
